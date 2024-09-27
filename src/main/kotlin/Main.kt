@@ -19,13 +19,21 @@ import java.io.File
 fun main() {
 
     val userDir = System.getProperty("user.dir")
-
+    // FICHERO CON LOS DATOS DE LAS CALIFICACIONES
     val ficheroCotizacion = File("$userDir\\src\\main\\resources\\calificaciones.csv")
 
     val lectorDeFicheros = FileReader()
     val contenido = lectorDeFicheros.readFile(ficheroCotizacion)
     val desglose = lectorDeFicheros.extraerDatos(contenido)
-    println(desglose)
+    val datos = lectorDeFicheros.addInfo(desglose)
+    val fin = lectorDeFicheros.aprobSusp(datos)
+    println("-------------APROBADOS-------------")
+    fin.first.forEach { println(it) }
+    println()
+    println("-------------SUSPENSOS-------------")
+    fin.second.forEach { println(it) }
+
+
 
 
 }
