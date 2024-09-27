@@ -8,7 +8,7 @@ class FileReader {
 
 
 
-    // funcion que recoge todos los datos del fichero
+    // Funcion que recoge todos los datos del fichero
     fun readFile(file: File): List<String>{
         var contenido: List<String> = emptyList()
         if (file.exists()){
@@ -19,7 +19,7 @@ class FileReader {
 
 //--------------------------------------------------------------------------------------------------------------------//
 
-    // funcion que extrae los datos y los convierte a una lista de mapas
+    // Funcion que extrae los datos y los convierte a una lista de mapas
     fun extraerDatos(contenido: List<String>): List<MutableMap<String, String>> {
 
         var linea = 1
@@ -100,7 +100,7 @@ class FileReader {
 
 //--------------------------------------------------------------------------------------------------------------------//
 
-    // funcion que añade la ultima columna a los datos de los estudiantes
+    // Funcion que añade la ultima columna a los datos de los estudiantes
     fun addInfo(datos: List<MutableMap<String, String>>): List<MutableMap<String, String>> {
         datos.forEach {
             alumno ->
@@ -111,7 +111,7 @@ class FileReader {
 
 //--------------------------------------------------------------------------------------------------------------------//
 
-    // funcion que calcula la nota necesaria en la funcion anterior
+    // Funcion que calcula la nota necesaria en la funcion anterior
     fun calcularNota(alumno: Map<String, String>): Float{
 
         var nota1 = 0.0F
@@ -163,7 +163,7 @@ class FileReader {
 
 //--------------------------------------------------------------------------------------------------------------------//
 
-    // funcion que distribuye a los alumnos en aprobados y suspensos
+    // Funcion que distribuye a los alumnos en aprobados y suspensos
     fun aprobSusp(datos: List<MutableMap<String, String>>): Pair<List<Map<String,String>>,List<Map<String,String>>>{
 
         val aprovados = mutableListOf<Map<String,String>>()
