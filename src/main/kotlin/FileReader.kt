@@ -20,42 +20,42 @@ class FileReader {
         var linea = 1
         val resultado = mutableListOf<Map<String, Map<String, String>>>()
         while (linea < contenido.size){
-            val contenidoSplit = contenido[linea].split(";")
+            val lineaSplit = contenido[linea].split(";")
             val alumno = mutableMapOf<String,Map<String, String>>()
             val datos = mutableMapOf<String,String>()
             var cont = 0
-            while (cont < contenidoSplit.size){
+            while (cont < lineaSplit.size){
 
                 when(cont){
                     0 -> {
-                        datos["Apellidos"] = contenidoSplit[cont]
+                        datos["Apellidos"] = lineaSplit[cont]
                     }
                     1 -> {
-                        datos["Nombre"] = contenidoSplit[cont]
+                        datos["Nombre"] = lineaSplit[cont]
                     }
                     2 -> {
-                        datos["Asistencia"] = contenidoSplit[cont]
+                        datos["Asistencia"] = lineaSplit[cont]
                     }
                     3 -> {
-                        datos["Parcial1"] = contenidoSplit[cont]
+                        datos["Parcial1"] = lineaSplit[cont]
                     }
                     4 -> {
-                        datos["Parcial2"] = contenidoSplit[cont]
+                        datos["Parcial2"] = lineaSplit[cont]
                     }
                     5 -> {
-                        datos["Ordinario1"] = contenidoSplit[cont]
+                        datos["Ordinario1"] = lineaSplit[cont]
                     }
                     6 -> {
-                        datos["Ordinario2"] = contenidoSplit[cont]
+                        datos["Ordinario2"] = lineaSplit[cont]
                     }
                     7 -> {
-                        datos["Practicas"] = contenidoSplit[cont]
+                        datos["Practicas"] = lineaSplit[cont]
                     }
                     8 -> {
-                        datos["OrdinarioPracticas"] = contenidoSplit[cont]
+                        datos["OrdinarioPracticas"] = lineaSplit[cont]
                     }
                 }
-                alumno[contenidoSplit[cont]] = datos
+                alumno[lineaSplit[cont]] = datos
                 cont ++
             }
             resultado.add(alumno)
@@ -94,7 +94,7 @@ class FileReader {
     fun addDatos( datos: MutableList<Map<String, List<String>>>){
         datos.forEach {
             linea ->
-            linea.values.toMutableList()
+            println(linea.values.toMutableList())
         }
     }
 
